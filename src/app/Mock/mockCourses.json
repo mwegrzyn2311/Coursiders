@@ -1,0 +1,134 @@
+
+  [{
+    "name": "Wprowadzenie do systemu UNIX",
+    "ects": 4,
+    "format": "Lab",
+    "exam": false,
+    "capacity": 30,
+    "currentScore": 4.1,
+    "ratingCount": 10,
+    "icon": "assets/images/comp.jpg",
+    "term": 1
+  },
+    {
+      "name": "Wstęp do informatyki",
+      "ects": 6,
+      "format": "Project",
+      "exam": true,
+      "capacity": 220,
+      "currentScore": 4.6,
+      "ratingCount": 10,
+      "icon": "assets/images/comp.jpg",
+      "term": 1
+    },
+    {
+      "name": "Analiza matematyczna",
+      "ects": 6,
+      "format": "Exercise",
+      "exam": true,
+      "capacity": 150,
+      "currentScore": 3.7,
+      "ratingCount": 10,
+      "icon": "assets/images/maths.png",
+      "term": 1
+    },
+    {
+      "name": "Algebra",
+      "ects": 6,
+      "format": "Exercise",
+      "exam": true,
+      "capacity": 180,
+      "currentScore": 3.9,
+      "ratingCount": 10,
+      "icon": "assets/images/maths.png",
+      "term": 1
+    },
+    {
+      "name": "Matematyka Dyskretna",
+      "ects": 5,
+      "format": "Exercise",
+      "exam": false,
+      "capacity": 200,
+      "currentScore": 4.0,
+      "ratingCount": 10,
+      "icon": "assets/images/maths.png",
+      "term": 1
+    },
+    {
+      "name": "Kompetencje interpersonalne",
+      "ects": 3,
+      "format": "Lecture",
+      "exam": false,
+      "capacity": 180,
+      "currentScore": 4.8,
+      "ratingCount": 10,
+      "icon": "assets/images/group.jpg",
+      "term": 1
+    },
+    {
+      "name": "Wychowanie fizyczne 1",
+      "ects": 0,
+      "format": "Lab",
+      "exam": false,
+      "capacity": 100,
+      "currentScore": 3.5,
+      "ratingCount": 10,
+      "icon": "assets/images/sport.png",
+      "term": 1
+    },
+    {
+      "name": "Algorytmty i stuktury danych",
+      "ects": 6,
+      "format": "Exercise",
+      "exam": true,
+      "capacity": 220,
+      "currentScore": 4.5,
+      "ratingCount": 10,
+      "icon": "assets/images/comp.jpg",
+      "term": 2
+    },
+    {
+      "name": "Programowanie imperatywne",
+      "ects": 4,
+      "format": "Lab",
+      "exam": false,
+      "capacity": 130,
+      "currentScore": 4.3,
+      "ratingCount": 10,
+      "icon": "assets/images/comp.jpg",
+      "term": 2
+    },
+    {
+      "name": "Logika matematyczna",
+      "ects": 6,
+      "format": "Exercise",
+      "exam": true,
+      "capacity": 70,
+      "currentScore": 4.3,
+      "ratingCount": 10,
+      "icon": "assets/images/maths.png",
+      "term": 2
+    },
+    {
+      "name": "Projektowanie obiektowe",
+      "ects": 4,
+      "format": "Project",
+      "exam": false,
+      "capacity": 220,
+      "currentScore": 4.7,
+      "ratingCount": 10,
+      "icon": "assets/images/comp.jpg",
+      "term": 3
+    },
+    {
+      "name": "Podstawy baz danych",
+      "ects": 4,
+      "format": "Project",
+      "exam": true,
+      "capacity": 220,
+      "currentScore": 3.9,
+      "ratingCount": 10,
+      "icon": "assets/images/comp.jpg",
+      "term": 3
+    }
+  ]

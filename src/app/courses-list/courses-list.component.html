@@ -1,0 +1,21 @@
+<div>
+<table>
+    <tr>
+        <th colspan="2">Kurs</th>
+        <th>Format</th>
+        <th>Term</th>
+        <th>Capacity</th>
+        <th>ECTS</th>
+        <th>Exam</th>
+        <th>Score</th>
+        <th>More</th>
+    </tr>
+    <tr *ngFor="let course of courses | courseFilterPipe: filterParams" app-course [course] = course (removeCourse)="removeCourse($event)" (updateCourse)="updateCourse($event)">
+    </tr>
+</table>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>
+<button><a routerLink="/courseForm">+</a></button>
+

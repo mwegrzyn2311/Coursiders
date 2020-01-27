@@ -1,0 +1,25 @@
+
+<td><img src="{{course.icon}}"></td>
+<td>{{course.name}}</td>
+<td>{{course.format}}</td>
+<td>{{course.term}}</td>
+<td>{{course.capacity}}</td>
+<td>{{course.ects}}</td>
+<td *ngIf="course.exam === true">+</td>
+<td *ngIf="course.exam === false">-</td>
+<td><ngb-rating *ngIf="rated === false" [(rate)]="course.currentScore" [max]="5">
+    <ng-template let-fill="fill" let-index="index">
+        <span class="star" [class.full]="fill === 100">
+            <span class="half" [style.width.%]="fill" (click)="rate(index+1)">&#9733;</span>&#9733;
+        </span>
+    </ng-template>
+    </ngb-rating>
+    <ngb-rating *ngIf="rated === true" [readonly]="true" [(rate)]="course.currentScore" [max]="5">
+        <ng-template let-fill="fill" let-index="index">
+            <span class="star" [class.full]="fill === 100">
+                <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+            </span>
+        </ng-template>
+    </ngb-rating>
+</td>
+<td><button (click)="remove()">x</button></td>

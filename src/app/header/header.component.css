@@ -1,0 +1,6 @@
+#login-button, #signup-button{
+    background-color: #0092ff;
+    margin-right: 10px;
+    font-weight: bold;
+    width:120px;
+}

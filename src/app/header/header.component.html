@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light" style="background:#414141;">
+        <div class="navbar-header">
+            <a href ="/" class ="navbar-brand">
+                <img src ="assets/images/comp.jpg" width="52" alt class = "d-inline-block align middle mr-2">
+                <span class ="navbar-brand text-white" style="font-size:24px;">Coursiders</span>
+            </a>
+        </div>
+        <div id="button-container">
+            <a routerLink="/sign-up" class="btn" id="signup-button"> Sign Up </a>
+            <a routerLink="/login" class="btn" id="login-button"> Sign In </a>
+            <a type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="searchNavbar" [ngbCollapse]="isCollapsed">
+            <div class="dropdown-divider"></div>
+            <div class="nav navbar-nav">
+                <app-search-form></app-search-form>
+            </div>
+        </div>
+
+</nav>
+<router-outlet></router-outlet>

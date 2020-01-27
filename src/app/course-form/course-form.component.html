@@ -1,0 +1,27 @@
+<form [formGroup]="modelForm" (ngSubmit)="onSubmit()">
+
+    <label class="col-2 col-form-label">Icon:
+        <input class="form-control" name="icon" formControlName="icon">
+        <span *ngIf="formErrors.icon" class="alert alert-danger">{{ formErrors.icon }}</span>
+    </label>
+    <label class="col-2 col-form-label">Name:
+        <input class="form-control" name="name" formControlName="name">
+        <span *ngIf="formErrors.name" class="alert alert-danger">{{ formErrors.name }}</span>
+    </label>
+    <label class="col-2 col-form-label">Format:
+        <input class="form-control" name="format" formControlName="format">
+    </label>
+    <label class="col-2 col-form-label">Term:
+        <input class="form-control" name="term" formControlName="term">
+    </label>
+    <label class="col-2 col-form-label">Capacity:
+        <input class="form-control" name="capacity" formControlName="capacity">
+    </label>
+    <label class="col-2 col-form-label">Exam:
+        <input class="form-control" name="exam" formControlName="exam">
+    </label>
+
+
+
+    <button [disabled]="!modelForm.valid" type="submit">Send</button>
+</form>

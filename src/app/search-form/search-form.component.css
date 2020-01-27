@@ -1,0 +1,26 @@
+label{
+    color:white;
+}
+.not-full-row{
+    display:inline-block;
+    width:94%;
+}
+.submit-div{
+    display:inline-block;
+    width:6%;
+}
+button{
+    background: none;
+    text-decoration: none;
+    border:none;
+}
+
+select{
+    font-weight: bold;
+    text-align: center;
+}
+option{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}

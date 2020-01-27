@@ -1,0 +1,20 @@
+<div id="form-container" class="row">
+    <div class="col-lg-3 col-2 col-xs-1"></div>
+
+            <form class="col-lg-6 col-8 col-xs-10" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <label class="col-6 left-label">Login:
+                    <input class="form-control" name="login" formControlName="login">
+                </label>
+                <label class="col-6 right-label">Password:
+                    <input class="form-control" name="password" formControlName="password">
+                </label>
+                <label class="col-12 checkbox-label">
+                    <input type="checkbox" class="checkbox" name="stayLogged" formControlName="stayLogged" value=true>Remember me
+                </label>
+                <button type="submit" class="btn">Sign In</button>
+                <a routerLink="/sign-up" id="register-link"> Don't have an account yet? Register now </a>
+            </form>
+    <div class="col-lg-3 col-2 col-xs-1"></div>
+</div>
+
+<router-outlet></router-outlet>
