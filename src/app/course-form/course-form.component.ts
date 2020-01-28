@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Course } from '../models/course';
 import {CourseService} from '../services/course.service';
-import {of} from 'rxjs';
 
 @Component({
   selector: 'app-course-form',
@@ -11,72 +10,41 @@ import {of} from 'rxjs';
 })
 export class CourseFormComponent implements OnInit {
 
-  modelForm: FormGroup;
-
-  formErrors = {
-    icon: '',
-    name: '',
-    exam: '',
-    format: '',
-    capacity: ''
-  };
-
-  private validationMessages = {
-    icon: {
-      required: 'Course icon is required'
-    },
-    name: {
-      required: 'Course name is required',
-      maxlength: 'Course name cannot be longer than 30 characters'
-    },
-    format: {
-      required: 'Course format is required'
-    },
-    term: {
-      required: 'Term of the course is required',
-      min: 'Term cannot be lower than 1',
-      max: 'Term cannot be higher than 10'
-    },
-    capacity: {
-      required: 'Course capacity is required',
-      min: 'Course capacity cannot be lower than 22',
-      max: 'Course capacity cannot exceed 400'
-    },
-    ects: {
-      required: 'Course ects points are required',
-    },
-    exam: {
-      required: 'Info about exam is required'
-    }
-  };
+  courseForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private courseService: CourseService) {
   }
   ngOnInit(): void {
-    this.modelForm = this.formBuilder.group({
+    this.courseForm = this.formBuilder.group({
       icon: ['', [Validators.required]],
-      name: ['', [Validators.required, Validators.maxLength(30)]],
-      format: ['', [Validators.required, Validators.maxLength(10)]],
+      name: ['', [Validators.required, Validators.maxLength(50)]],
+      format: ['', [Validators.required, Validators.maxLength(20)]],
       term: ['', [Validators.required, Validators.min(1), Validators.max(10)]],
-      capacity: [150, [Validators.required, Validators.min(22), Validators.max(400)]],
-      ects: ['', [Validators.required]],
+      capacity: ['', [Validators.required, Validators.min(12), Validators.max(400)]],
+      ects: ['', [Validators.required, Validators.min(0), Validators.max(15)]],
       exam: ['', [Validators.required]],
     });
 
+
   }
+
   onSubmit() {
+    if (!this.courseForm.valid) {
+      alert('Fill form in with proper values');
+      return;
+    }
     const course = new Course();
-    course.name = this.modelForm.value.name;
-    course.icon = this.modelForm.value.icon;
-    course.format = this.modelForm.value.format;
-    course.term = this.modelForm.value.term as number;
-    course.capacity = this.modelForm.value.capacity as number;
-    course.ects = this.modelForm.value.ects as number;
+    course.name = this.courseForm.value.name;
+    course.icon = this.courseForm.value.icon;
+    course.format = this.courseForm.value.format;
+    course.term = this.courseForm.value.term as number;
+    course.capacity = this.courseForm.value.capacity as number;
+    course.ects = this.courseForm.value.ects as number;
     course.points = 0;
     course.spotsTaken = 0;
     course.ratingCount = 0;
 
-    course.exam = (this.modelForm.value.exam === 'true');
+    course.exam = (this.courseForm.value.exam === 'true');
 
     this.courseService.addCourse(course);
   }

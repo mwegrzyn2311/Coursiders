@@ -4,12 +4,7 @@
     border-radius: 10px;
     background-color: white;
     padding:10px;
-    /*
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-right:10px;
-    padding-left:10px;
-    */
+
 }
 .image-container {
     text-align: center;
@@ -35,28 +30,20 @@ img {
 }
 
 /* table styling */
-table{
-    width:94%;
-    /*
-    margin-left:3%;
-    margin-right:3%;
-    */
+.table{
+    border:1px solid #545454;
 }
-th{
+.value{
+    border:1px solid #545454;
+}
+.label{
+    font-weight: bold;
     text-align: center;
 }
-td:first-child{
-    width:40%;
-}
-td:not(:first-child){
+
+.label:not(:first-child){
     width:10%;
     text-align: center;
-}
-td:nth-child(2){
-    width:15%;
-}
-td:last-child{
-    width:5%;
 }
 /* Score rating */
 .score-container{

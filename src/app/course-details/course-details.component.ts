@@ -29,7 +29,7 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   startEditingCourse() {
-    alert('Implement course editing!');
+    this.router.navigate(['/edit-course-form/' + this.course.name]);
   }
 
   deleteCourse() {

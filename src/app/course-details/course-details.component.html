@@ -2,28 +2,39 @@
     <div class="image-container">
         <img src="{{course.icon}}">
     </div>
-    <table>
-        <tr>
-            <th>Course</th>
-            <th>Format</th>
-            <th>Term</th>
-            <th>Capacity</th>
-            <th>Places left</th>
-            <th>ECTS</th>
-            <th>Exam</th>
-        </tr>
-        <tr>
-            <td>{{course.name}}</td>
-            <td>{{course.format}}</td>
-            <td>{{course.term}}</td>
-            <td>{{course.capacity}}</td>
-            <td>{{course.capacity - course.spotsTaken}}</td>
-            <td>{{course.ects}}</td>
-            <td *ngIf="course.exam === true">+</td>
-            <td *ngIf="course.exam === false">-</td>
-        </tr>
-    </table>
-    
+
+    <div class="row table">
+        <div class="col-12 col-lg-5 value">
+            <div class="label">Course</div>
+            <div class="data">{{course.name}}</div>
+        </div>
+        <div class="col-2 col-lg-1 value">
+            <div class="label">Format</div>
+            <div class="data">{{course.format}}</div>
+        </div>
+        <div class="col-2 col-lg-1 value">
+            <div class="label">Term</div>
+            <div class="data">{{course.term}}</div>
+        </div>
+        <div class="col-2 col-lg-1 value">
+            <div class="label">Capacity</div>
+            <div class="data">{{course.capacity}}</div>
+        </div>
+        <div class="col-2 col-lg-2 value">
+            <div class="label">Places left</div>
+            <div class="data">{{course.capacity - course.spotsTaken}}</div>
+        </div>
+        <div class="col-2 col-lg-1 value">
+            <div class="label">ECTS</div>
+            <div class="data">{{course.ects}}</div>
+        </div>
+        <div class="col-2 col-lg-1 value">
+            <div class="label">Exam</div>
+            <div *ngIf="course.exam === true" class="data">+</div>
+            <div *ngIf="course.exam === false" class="data">-</div>
+        </div>
+    </div>
+
     <div>
         <div class="score-container">
             <ngb-rating *ngIf="!courseRated() && courseJoined()" [(rate)]="rating" [max]="10">

@@ -24,6 +24,7 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { EditCourseFormComponent } from './edit-course-form/edit-course-form.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     LoginComponent,
     SignUpComponent,
     CourseDetailsComponent,
+    EditCourseFormComponent,
   ],
   imports: [
     BrowserModule,
