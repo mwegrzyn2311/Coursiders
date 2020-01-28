@@ -1,7 +1,7 @@
 <div class="course-container">
     <img src="{{course.icon}}">
     <p>{{course.name}}</p>
-    <ngb-rating [readonly]="true" [(rate)]="course.points/course.ratingCount" [max]="10">
+    <ngb-rating [readonly]="true" [(rate)]="rating" [max]="10">
         <ng-template let-fill="fill" let-index="index">
             <span class="star" [class.full]="fill === 100">
                 <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;

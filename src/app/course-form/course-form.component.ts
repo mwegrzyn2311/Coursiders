@@ -65,7 +65,6 @@ export class CourseFormComponent implements OnInit {
 
   }
   onSubmit() {
-    alert('yyy');
     const course = new Course();
     course.name = this.modelForm.value.name;
     course.icon = this.modelForm.value.icon;

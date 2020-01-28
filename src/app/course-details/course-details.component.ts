@@ -15,6 +15,7 @@ import {User} from '../models/user';
 export class CourseDetailsComponent implements OnInit {
   course: Course;
   user: User;
+  rating: number;
 
   constructor(private actRoute: ActivatedRoute, private courseService: CourseService, private authService: AuthService, private router: Router) {
   }
@@ -67,6 +68,11 @@ export class CourseDetailsComponent implements OnInit {
     })).subscribe((course) => {
       if (course != null) {
         this.course = course;
+        if (course.ratingCount === 0) {
+          this.rating = 0;
+        } else {
+          this.rating = course.points / course.ratingCount;
+        }
       }
     });
   }

@@ -59,15 +59,19 @@ export class CourseFilterPipe implements PipeTransform {
           if (!ectss && course.ects <= params.ects) return false;
           break;
       }
+      let rating = 0;
+      if (course.ratingCount !== 0) {
+        rating = course.points / course.ratingCount;
+      }
       switch (params.scoreType) {
         case(-1):
-          if (!scores && (course.points / course.ratingCount) >= params.score) return false;
+          if (!scores && rating >= params.score) return false;
           break;
         case(0):
-          if (!scores && (course.points / course.ratingCount) != params.score) return false;
+          if (!scores && rating != params.score) return false;
           break;
         case(1):
-          if (!scores && (course.points / course.ratingCount) <= params.score) return false;
+          if (!scores && rating <= params.score) return false;
           break;
       }
       return true;

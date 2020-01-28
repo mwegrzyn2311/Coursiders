@@ -5,6 +5,7 @@
 form{
     display: inline-block;
     border: solid 2px black !important;
+    background-color: #878787;
     border-radius: 8px;
     padding-top: 5px;
     padding-bottom: 5px;

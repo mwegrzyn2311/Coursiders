@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
   }
 
   signOut() {
-    this.isCollapsed = false;
+    this.isCollapsed = true;
     return this.authService.signOut();
   }
 

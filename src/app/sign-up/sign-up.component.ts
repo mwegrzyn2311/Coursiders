@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -21,6 +22,7 @@ export class SignUpComponent implements OnInit {
       repPassword: ['', [Validators.required]],
     });
   }
+
   onSubmit(): void {
     if (this.registerForm.value.password !== this.registerForm.value.repPassword) {
       alert('Passwords don\'t match');

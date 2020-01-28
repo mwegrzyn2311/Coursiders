@@ -11,6 +11,7 @@ export class CourseComponent implements OnInit {
   @Output() removeCourse = new EventEmitter<Course>();
   @Output() updateCourse = new EventEmitter<Course>();
   rated: boolean;
+  rating: number;
   constructor() {
     this.rated = false;
   }
@@ -27,5 +28,10 @@ export class CourseComponent implements OnInit {
     */
   }
   ngOnInit() {
+    if (this.course.ratingCount === 0) {
+      this.rating = 0;
+    } else {
+      this.rating = this.course.points / this.course.ratingCount;
+    }
   }
 }
