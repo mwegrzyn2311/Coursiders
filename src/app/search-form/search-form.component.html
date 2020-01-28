@@ -1,3 +1,4 @@
+<div class="title">Course filter</div>
 <form [formGroup]="modelForm" (ngSubmit) = "onSubmit()">
     <div class="not-full-row">
         <label class=" col-md-3 col-sm-6 col-xs-6">Name:
@@ -19,7 +20,7 @@
                 <input autocomplete="spaghetti" class="form-control col-8 col-md-7" name="ects" formControlName="ects">
             </div>
         </label>
-        <label class="col-md-3 col-sm-6 col-xs-6">Score:
+        <label class="col-md-3 col-sm-6 col-xs-6">Rating:
             <div class="row">
                 <select class="form-control col-3 col-md-4" name="scoreType" formControlName="scoreType">
                     <option *ngFor ="let s of eqSigns" [ngValue]=s.val> {{s.str}} </option>

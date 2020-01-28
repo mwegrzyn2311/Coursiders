@@ -18,10 +18,14 @@ export class SignUpComponent implements OnInit {
       login: ['', [Validators.required]],
       password: ['', [Validators.required]],
       username: ['', [Validators.required]],
+      repPassword: ['', [Validators.required]],
     });
   }
   onSubmit(): void {
-    this.authService.signUp(this.registerForm.value.login, this.registerForm.value.password, this.registerForm.value.username);
+    if (this.registerForm.value.password !== this.registerForm.value.repPassword) {
+      alert('Passwords don\'t match');
+    } else {
+      this.authService.signUp(this.registerForm.value.login, this.registerForm.value.password, this.registerForm.value.username);
+    }
   }
-
 }

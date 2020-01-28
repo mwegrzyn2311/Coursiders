@@ -41,6 +41,8 @@ export class CourseDetailsComponent implements OnInit {
       this.user.joinedCourses = [];
     }
     this.user.joinedCourses.push(this.course.name);
+    this.course.spotsTaken++;
+    this.courseService.updateCourse(this.course);
     this.authService.updateUser(this.user);
   }
 

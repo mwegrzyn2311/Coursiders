@@ -1,9 +1,15 @@
+
 .courses-container{
-    padding-left:5px;
-    padding-right:5px;
+    margin-left: 0;
+    margin-right:0;
 }
 .course-container{
     margin-bottom: 10px;
+}
+.add-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 .add-course{
     background-color: white;
@@ -13,57 +19,18 @@
     border-radius: 10px;
     padding-top:10px;
     padding-bottom:50px;
-
 }
 .add-course:hover {
     cursor: pointer;
     background-color: grey;
 }
 
-.add-course > div {
-    font-size: 30px;
+.add-course > div:first-child {
+    font-size: 120px;
     font-weight: bold;
     top:50%;
 }
-/*
-table{
-    margin-left:auto;
-    margin-right:auto;
+.add-course > div:nth-child(2) {
+    font-weight: bold;
+    font-size: 22px;
 }
-table, th, td, tr{
-    padding:8px;
-    border-collapse:collapse;
-}
-th{
-    text-align:center;
-}
-tr:nth-child(odd){
-    background-color: white;
-}
-tr:first-child{
-    background-color: #878787;
-}
-tr:nth-child(even){
-    background-color: #cecece;
-}
-.selected{
-    background-color: #3e7cc6 !important;
-}
-tr:nth-child(1){
-    width:300px;
-}
-button{
-    display:block;
-    width:40px;
-    height:40px;
-    line-height:20px;
-}
-a{
-    font-size:25px;
-    text-align:center;
-}
-div{
-    margin:0 10px;
-    display: inline-block;
-}
-*/

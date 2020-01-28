@@ -5,6 +5,7 @@ import {Observable, of, Subject} from 'rxjs';
 import {User} from '../models/user';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {switchMap} from 'rxjs/operators';
+import {Course} from '../models/course';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class AuthService {
         return of(null);
       }
     }));
+  }
+
+  getAllUsers(): Observable<User[]> {
+      return this.db.list<User>('/Users').valueChanges();
   }
 
   currentUser(): Observable<User> {
@@ -80,4 +85,18 @@ export class AuthService {
     this.fireAuth.auth.signOut();
     this.router.navigate(['/']);
   }
+
+  deleteCourseFromUsers(course: Course) {
+    this.getAllUsers().forEach((users) => users.forEach((user) => {
+      if (user && user.joinedCourses && user.joinedCourses.includes(course.name)) {
+        user.joinedCourses = user.joinedCourses.filter(name => name !== course.name);
+      }
+      if (user && user.ratedCourses && user.ratedCourses.includes(course.name)) {
+        user.ratedCourses = user.ratedCourses.filter(name => name !== course.name);
+      }
+      this.updateUser(user);
+    }));
+  }
+
+
 }

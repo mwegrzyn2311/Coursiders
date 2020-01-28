@@ -5,11 +5,14 @@
         <label class="col-6 left-label">Email:
             <input autocomplete="off" class="form-control" name="login" formControlName="login">
         </label>
-        <label class="col-6 right-label">Password:
-            <input autocomplete="off" class="form-control" name="password" formControlName="password">
-        </label>
         <label class="col-6 right-label">Username:
             <input autocomplete="off" class="form-control" name="username" formControlName="username">
+        </label>
+        <label class="col-6 right-label">Password:
+            <input type="password" autocomplete="off" class="form-control" name="password" formControlName="password">
+        </label>
+        <label class="col-6 right-label">Repeat password:
+            <input type="password" autocomplete="off" class="form-control" name="repPassword" formControlName="repPassword">
         </label>
         <button type="submit" class="btn">Register</button>
         <a routerLink="/login" id="login-link"> Already have an account? Log in instead </a>

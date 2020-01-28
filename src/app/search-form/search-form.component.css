@@ -1,5 +1,13 @@
+.title{
+    text-align: center;
+    color:white;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
 label{
     color:white;
+    text-align: center;
 }
 .not-full-row{
     display:inline-block;

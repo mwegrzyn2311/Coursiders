@@ -1,33 +1,12 @@
-<!--div>
-<table>
-    <tr>
-        <th colspan="2">Kurs</th>
-        <th>Format</th>
-        <th>Term</th>
-        <th>Capacity</th>
-        <th>ECTS</th>
-        <th>Exam</th>
-        <th>Score</th>
-        <th>More</th>
-    </tr>
-    <tr *ngFor="let course of courses | courseFilterPipe: filterParams" app-course [course] = course (removeCourse)="removeCourse($event)" (updateCourse)="updateCourse($event)">
-    </tr>
-</table>
-</div-->
 
 <div class="row courses-container">
-    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-xs-6 course-container" *ngFor="let course of courses | courseFilterPipe: filterParams">
+    <div class="col-xl-2 col- col-lg-3 col-md-4 col-sm-4 col-sm-6 course-container" *ngFor="let course of courses | courseFilterPipe: filterParams">
         <app-course [course] = course (removeCourse)="removeCourse($event)" (updateCourse)="updateCourse($event)"></app-course>
     </div>
-    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-xs-6 course-container" *ngIf="user && user.role==='admin'" (click)="startAddingCourse()">
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-sm-6 course-container add-container" *ngIf="user && user.role==='admin'" (click)="startAddingCourse()">
         <div class="add-course">
             <div>+</div>
+            <div>Add new course</div>
         </div>
     </div>
 </div>
-
-<!--div>
-    <router-outlet></router-outlet>
-</div>
-<button><a routerLink="/courseForm">+</a></button-->
-

@@ -26,14 +26,14 @@
     </table>
     <div>
         <div class="score-container">
-            <ngb-rating *ngIf="!courseRated()" [(rate)]="course.points/course.ratingCount" [max]="10">
+            <ngb-rating *ngIf="!courseRated() && courseJoined()" [(rate)]="course.points/course.ratingCount" [max]="10">
                 <ng-template let-fill="fill" let-index="index">
                 <span class="star" [class.full]="fill === 100">
                     <span class="half" [style.width.%]="fill" (click)="rate(index+1)">&#9733;</span>&#9733;
                 </span>
                 </ng-template>
             </ngb-rating>
-            <ngb-rating *ngIf="courseRated()" [readonly]="true" [(rate)]="course.points/course.ratingCount" [max]="10">
+            <ngb-rating *ngIf="courseRated() || !courseJoined()" [readonly]="true" [(rate)]="course.points/course.ratingCount" [max]="10">
                 <ng-template let-fill="fill" let-index="index">
                     <span class="star" [class.full]="fill === 100">
                         <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
@@ -43,10 +43,10 @@
         </div>
     </div>
     <div class="row buttons-container">
-        <button class="btn yellow col-2" *ngIf="user && user.role==='admin'" (click)="startEditingCourse()">Edit Course</button>
-        <div class="empty col-3"></div>
-        <button class="btn red col-2" *ngIf="user && user.role==='admin'" (click)="deleteCourse()">Delete Course</button>
-        <div class="empty col-3"></div>
-        <button class="btn green col-2" *ngIf="!courseJoined()" (click)="joinCourse()">Join Course</button>
+        <button class="btn yellow col-lg-2 col-md-3 col-sm-4" *ngIf="user && user.role==='admin'" (click)="startEditingCourse()">Edit Course</button>
+        <div class="d-sm-none d-md-block empty col-lg-3 col-md-1"></div>
+        <button class="btn red col-lg-2 col-md-4 col-sm-4" *ngIf="user && user.role==='admin'" (click)="deleteCourse()">Delete Course</button>
+        <div class="d-sm-none d-md-block empty col-lg-3 col-md-1"></div>
+        <button class="btn green col-lg-2 col-md-3 cols-sm-4" *ngIf="!courseJoined()" (click)="joinCourse()">Join Course</button>
     </div>
 </div>

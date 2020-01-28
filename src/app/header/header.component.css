@@ -1,6 +1,17 @@
+@media(max-width:576px){
+    .navbar-brand span {
+        display: none;
+    }
+}
+
 #login-button, #signup-button, button{
     background-color: #0092ff;
     margin-right: 10px;
     font-weight: bold;
     width:120px;
+}
+.username{
+    width:auto;
+    min-width:120px;
+    max-width:250px;
 }

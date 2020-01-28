@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Course } from '../models/course';
-import {AngularFireDatabase} from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AuthService } from './auth.service';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
+  user: User;
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase, private authService: AuthService) {
   }
 
   getCourses(): Observable<any> {
@@ -23,7 +26,9 @@ export class CourseService {
   updateCourse(course: Course) {
     this.addCourse(course);
   }
-  removeCourse(course: Course): Promise<void> {
-    return this.db.list('/Courses').remove(course.name);
+  removeCourse(course: Course) {
+    this.db.list('/Courses').remove(course.name);
+    this.authService.deleteCourseFromUsers(course);
   }
+
 }
