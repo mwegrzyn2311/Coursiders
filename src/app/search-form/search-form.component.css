@@ -18,6 +18,7 @@ button{
 select{
     font-weight: bold;
     text-align: center;
+    margin-right: 3px;
 }
 option{
     text-align: center;

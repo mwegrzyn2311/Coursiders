@@ -1,3 +1,47 @@
+.course-container{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding-top:10px;
+    padding-bottom:50px;
+}
+p{
+    margin-bottom:0;
+}
+img{
+    width:100px;
+    margin-bottom:5px;
+}
+.star {
+    position: relative;
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #d3d3d3;
+}
+.full {
+    color: #1e90ff;
+}
+.half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: #1e90ff;
+}
+hr{
+    margin-top:2px;
+    margin-bottom:10px;
+}
+a{
+    background-color: #0092ff;
+    margin-right: 10px;
+    font-weight: bold;
+    width: 90px;
+    height: 38px;
+}
+
+/*
 td:not(:nth-child(2)){
     text-align:center;
 }
@@ -62,3 +106,4 @@ td:nth-child(7){
 td:nth-child(8){
     width:60px;
 }
+*/

@@ -9,6 +9,9 @@ import {CourseService} from '../services/course.service';
 import {CourseFilterPipe} from '../pipes/course-filter.pipe';
 import {FilterParams} from '../models/filter-params';
 import {SearchService} from '../services/search.service';
+import {AuthService} from '../services/auth.service';
+import {User} from '../models/user';
+import {Router} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import {SearchService} from '../services/search.service';
 export class CoursesListComponent implements OnInit {
   courses: Array<Course>;
   filterParams: FilterParams;
-  constructor(private courseService: CourseService, private searchService: SearchService) {
+  user: User;
+
+  constructor(private courseService: CourseService, private searchService: SearchService, private authService: AuthService, private router: Router) {
   }
   getCourses(): void {
     this.courseService.getCourses()
@@ -47,9 +52,22 @@ export class CoursesListComponent implements OnInit {
   updateCourse(course: Course): void {
     this.courseService.updateCourse(course);
   }
+
+  startAddingCourse() {
+    this.router.navigate(['/course-form']);
+  }
+
+  getCurrentUser() {
+    this.authService.currentUser().subscribe((user) => {
+      if (user != null)
+        this.user = user;
+    });
+  }
+
   ngOnInit() {
     this.getCourses();
     this.getFilterParams();
+    this.getCurrentUser();
   }
 
 }

@@ -1,1 +1,52 @@
-<p>course-details works!</p>
+<div *ngIf="course != null" class="course-container">
+    <div class="image-container">
+        <img src="{{course.icon}}">
+    </div>
+    <table>
+        <tr>
+            <th>Course</th>
+            <th>Format</th>
+            <th>Term</th>
+            <th>Capacity</th>
+            <th>Places left</th>
+            <th>ECTS</th>
+            <th>Exam</th>
+        </tr>
+        <tr>
+            <td>{{course.name}}</td>
+            <td>{{course.format}}</td>
+            <td>{{course.term}}</td>
+            <td>{{course.capacity}}</td>
+            <td>{{course.capacity - course.spotsTaken}}</td>
+            <td>{{course.ects}}</td>
+            <td *ngIf="course.exam === true">+</td>
+            <td *ngIf="course.exam === false">-</td>
+        </tr>
+
+    </table>
+    <div>
+        <div class="score-container">
+            <ngb-rating *ngIf="!courseRated()" [(rate)]="course.points/course.ratingCount" [max]="10">
+                <ng-template let-fill="fill" let-index="index">
+                <span class="star" [class.full]="fill === 100">
+                    <span class="half" [style.width.%]="fill" (click)="rate(index+1)">&#9733;</span>&#9733;
+                </span>
+                </ng-template>
+            </ngb-rating>
+            <ngb-rating *ngIf="courseRated()" [readonly]="true" [(rate)]="course.points/course.ratingCount" [max]="10">
+                <ng-template let-fill="fill" let-index="index">
+                    <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                    </span>
+                </ng-template>
+            </ngb-rating>
+        </div>
+    </div>
+    <div class="row buttons-container">
+        <button class="btn yellow col-2" *ngIf="user && user.role==='admin'" (click)="startEditingCourse()">Edit Course</button>
+        <div class="empty col-3"></div>
+        <button class="btn red col-2" *ngIf="user && user.role==='admin'" (click)="deleteCourse()">Delete Course</button>
+        <div class="empty col-3"></div>
+        <button class="btn green col-2" *ngIf="!courseJoined()" (click)="joinCourse()">Join Course</button>
+    </div>
+</div>

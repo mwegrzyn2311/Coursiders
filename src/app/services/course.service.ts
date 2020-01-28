@@ -20,10 +20,10 @@ export class CourseService {
   addCourse(course: Course) {
     this.db.list('/Courses').set(String(course.name), course);
   }
+  updateCourse(course: Course) {
+    this.addCourse(course);
+  }
   removeCourse(course: Course): Promise<void> {
     return this.db.list('/Courses').remove(course.name);
-  }
-  updateCourse(course: Course) {
-    this.db.object('Courses/' + course.name).update(course);
   }
 }

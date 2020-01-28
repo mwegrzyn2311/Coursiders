@@ -42,6 +42,9 @@ export class CourseFormComponent implements OnInit {
       min: 'Course capacity cannot be lower than 22',
       max: 'Course capacity cannot exceed 400'
     },
+    ects: {
+      required: 'Course ects points are required',
+    },
     exam: {
       required: 'Info about exam is required'
     }
@@ -56,19 +59,22 @@ export class CourseFormComponent implements OnInit {
       format: ['', [Validators.required, Validators.maxLength(10)]],
       term: ['', [Validators.required, Validators.min(1), Validators.max(10)]],
       capacity: [150, [Validators.required, Validators.min(22), Validators.max(400)]],
+      ects: ['', [Validators.required]],
       exam: ['', [Validators.required]],
     });
 
   }
   onSubmit() {
+    alert('yyy');
     const course = new Course();
     course.name = this.modelForm.value.name;
     course.icon = this.modelForm.value.icon;
     course.format = this.modelForm.value.format;
     course.term = this.modelForm.value.term as number;
     course.capacity = this.modelForm.value.capacity as number;
-    course.ects = 4;
-    course.currentScore = 0;
+    course.ects = this.modelForm.value.ects as number;
+    course.points = 0;
+    course.spotsTaken = 0;
     course.ratingCount = 0;
 
     course.exam = (this.modelForm.value.exam === 'true');

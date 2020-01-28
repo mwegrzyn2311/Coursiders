@@ -2,7 +2,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Course} from '../models/course';
 
 @Component({
-  selector: '[app-course]',
+  selector: 'app-course',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
 })
@@ -18,11 +18,13 @@ export class CourseComponent implements OnInit {
     this.removeCourse.emit(this.course);
   }
   public rate(rating: number): void {
+    /*
     this.removeCourse.emit(this.course);
     this.course.currentScore = (this.course.currentScore * this.course.ratingCount + rating) / (this.course.ratingCount + 1);
     this.course.ratingCount++;
     this.rated = true;
     this.updateCourse.emit(this.course);
+    */
   }
   ngOnInit() {
   }

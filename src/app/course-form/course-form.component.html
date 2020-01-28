@@ -17,11 +17,12 @@
     <label class="col-2 col-form-label">Capacity:
         <input class="form-control" name="capacity" formControlName="capacity">
     </label>
+    <label class="col-2 col-form-label">Ects:
+        <input class="form-control" name="ects" formControlName="etcs">
+    </label>
     <label class="col-2 col-form-label">Exam:
         <input class="form-control" name="exam" formControlName="exam">
     </label>
 
-
-
-    <button [disabled]="!modelForm.valid" type="submit">Send</button>
+    <button class="btn col-2" type="submit">Send</button>
 </form>

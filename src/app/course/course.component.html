@@ -1,5 +1,18 @@
+<div class="course-container">
+    <img src="{{course.icon}}">
+    <p>{{course.name}}</p>
+    <ngb-rating [readonly]="true" [(rate)]="course.points/course.ratingCount" [max]="10">
+        <ng-template let-fill="fill" let-index="index">
+            <span class="star" [class.full]="fill === 100">
+                <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+            </span>
+        </ng-template>
+    </ngb-rating>
+    <hr>
+    <a class="btn float-right" routerLink="/course-det/{{course.name}}">Details</a>
+</div>
 
-<td><img src="{{course.icon}}"></td>
+<!--td><img src="{{course.icon}}"></td>
 <td>{{course.name}}</td>
 <td>{{course.format}}</td>
 <td>{{course.term}}</td>
@@ -22,4 +35,4 @@
         </ng-template>
     </ngb-rating>
 </td>
-<td><button (click)="remove()">x</button></td>
+<td><button (click)="remove()">x</button></td-->

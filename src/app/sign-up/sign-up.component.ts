@@ -16,11 +16,12 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       login: ['', [Validators.required]],
-      password: ['', Validators.required]
+      password: ['', [Validators.required]],
+      username: ['', [Validators.required]],
     });
   }
   onSubmit(): void {
-    this.authService.signUp(this.registerForm.value.login, this.registerForm.value.password);
+    this.authService.signUp(this.registerForm.value.login, this.registerForm.value.password, this.registerForm.value.username);
   }
 
 }

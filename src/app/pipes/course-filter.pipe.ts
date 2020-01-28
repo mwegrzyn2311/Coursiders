@@ -18,24 +18,20 @@ export class CourseFilterPipe implements PipeTransform {
     }
 
     let names = true;
-    if (params.name) {
+    if (params.name)
       names = false;
-    }
 
     let terms = true;
-    if (params.term) {
+    if (params.term)
       terms = false;
-    }
 
     let ectss = true;
-    if (params.ects) {
+    if (params.ects)
       ectss = false;
-    }
 
     let scores = true;
-    if (params.score) {
+    if (params.score)
       scores = false;
-    }
 
     return courses.filter(course => {
       if (!names && !course.name.toLowerCase().includes(params.name.toLowerCase())) {
@@ -65,13 +61,13 @@ export class CourseFilterPipe implements PipeTransform {
       }
       switch (params.scoreType) {
         case(-1):
-          if (!scores && course.currentScore >= params.score) return false;
+          if (!scores && (course.points / course.ratingCount) >= params.score) return false;
           break;
         case(0):
-          if (!scores && course.currentScore != params.score) return false;
+          if (!scores && (course.points / course.ratingCount) != params.score) return false;
           break;
         case(1):
-          if (!scores && course.currentScore <= params.score) return false;
+          if (!scores && (course.points / course.ratingCount) <= params.score) return false;
           break;
       }
       return true;

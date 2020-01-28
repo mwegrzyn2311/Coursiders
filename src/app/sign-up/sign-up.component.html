@@ -2,11 +2,14 @@
     <div class="col-lg-3 col-2 col-xs-1"></div>
 
     <form class="col-lg-6 col-8 col-xs-10" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <label class="col-6 left-label">Login:
-            <input class="form-control" name="login" formControlName="login">
+        <label class="col-6 left-label">Email:
+            <input autocomplete="off" class="form-control" name="login" formControlName="login">
         </label>
         <label class="col-6 right-label">Password:
-            <input class="form-control" name="password" formControlName="password">
+            <input autocomplete="off" class="form-control" name="password" formControlName="password">
+        </label>
+        <label class="col-6 right-label">Username:
+            <input autocomplete="off" class="form-control" name="username" formControlName="username">
         </label>
         <button type="submit" class="btn">Register</button>
         <a routerLink="/login" id="login-link"> Already have an account? Log in instead </a>

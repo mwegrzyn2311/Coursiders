@@ -3,9 +3,10 @@ export class Course {
     name: string;
     format: string;
     capacity: number;
+    spotsTaken: number;
     term: number;
     ects: number;
     exam: boolean;
-    currentScore: number;
+    points: number;
     ratingCount: number;
 }
