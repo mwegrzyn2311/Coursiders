@@ -6,6 +6,7 @@ import {User} from '../models/user';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {switchMap} from 'rxjs/operators';
 import {Course} from '../models/course';
+import {auth} from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -55,11 +56,18 @@ export class AuthService {
 
   signIn(email: string, password: string, stayLogged: boolean) {
 
-    return this.fireAuth.auth.signInWithEmailAndPassword(email, password)
-        .then((result) => {
+    let session = auth.Auth.Persistence.SESSION
+    if (stayLogged) {
+      session = auth.Auth.Persistence.LOCAL;
+    }
+    return this.fireAuth.auth.setPersistence(session)
+        .then(() => {
+          this.fireAuth.auth.signInWithEmailAndPassword(email, password)
+            .then((result) => {
           this.router.navigate(['/']);
-        }).catch((error) => {
-          alert(error.message);
+          }).catch((error) => {
+            alert(error.message);
+          });
         });
 
     /* Code below doesn't work for now. Sth wrong with auth persistence
