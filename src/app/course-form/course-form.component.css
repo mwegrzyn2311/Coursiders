@@ -2,5 +2,9 @@ button{
     background-color: #0092ff;
     color: black;
     font-weight: bold;
+    width: 100%;
+}
+.btn-container{
+    display: inline-block;
 }
 

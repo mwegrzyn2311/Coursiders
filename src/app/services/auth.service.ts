@@ -69,24 +69,6 @@ export class AuthService {
             alert(error.message);
           });
         });
-
-    /* Code below doesn't work for now. Sth wrong with auth persistence
-    let session = this.fireAuth.auth.Persistence.SESSION;
-    if (stayLogged) {
-      session = this.fireAuth.auth.Persistence.LOCAL;
-    }
-    return this.fireAuth.auth.setPersistence(session)
-        .then(() => {
-          return this.fireAuth.auth.signInWithEmailAndPassword(email, password)
-              .then((result) => {
-                // this.router.navigate(['/']);
-                alert('You have successfully logged in');
-              }).catch((error) => {
-                alert(error.message);
-              });
-        });
-
-     */
   }
 
   signOut() {

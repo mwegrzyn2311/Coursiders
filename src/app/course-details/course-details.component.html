@@ -59,9 +59,11 @@
         <button class="btn red col-lg-2 col-md-4 col-sm-4" (click)="deleteCourse()">Delete Course</button>
         <div class="d-sm-none d-md-block empty col-lg-3 col-md-1"></div>
         <button class="btn green col-lg-2 col-md-3 cols-sm-4" *ngIf="!courseJoined()" (click)="joinCourse()">Join Course</button>
+        <button class="btn red col-lg-2 col-md-3 col-4 float-left" *ngIf="courseJoined()" (click)="quitCourse()">Quit Course</button>
     </div>
     <div *ngIf="user && user.role!=='admin'" class="row button-container">
         <div class="col-lg-10 col-md-9 col-8 empty"></div>
         <button class="btn green col-lg-2 col-md-3 col-4 float-left" *ngIf="!courseJoined()" (click)="joinCourse()">Join Course</button>
+        <button class="btn red col-lg-2 col-md-3 col-4 float-left" *ngIf="courseJoined()" (click)="quitCourse()">Quit Course</button>
     </div>
 </div>

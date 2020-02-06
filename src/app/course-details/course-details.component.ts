@@ -47,6 +47,13 @@ export class CourseDetailsComponent implements OnInit {
     this.authService.updateUser(this.user);
   }
 
+  quitCourse() {
+    this.user.joinedCourses = this.user.joinedCourses.filter(name => name !== this.course.name);
+    this.course.spotsTaken--;
+    this.courseService.updateCourse(this.course);
+    this.authService.updateUser(this.user);
+  }
+
   rate(score: number) {
     this.course.points += score;
     this.course.ratingCount ++;

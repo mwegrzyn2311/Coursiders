@@ -1,29 +1,30 @@
 <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
 
-    <label class="col-2 col-form-label">Icon:
+    <label class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-form-label">Icon:
         <input class="form-control" name="icon" formControlName="icon">
     </label>
-    <label class="col-2 col-form-label">Name:
+    <label class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-form-label">Name:
         <input class="form-control" maxlength="50" name="name" formControlName="name">
     </label>
-    <label class="col-2 col-form-label">Format:
+    <label class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-form-label">Format:
         <input class="form-control" name="format" formControlName="format">
     </label>
-    <label class="col-2 col-form-label">Term:
+    <label class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-form-label">Term:
         <input type="number" min="1" max="10" class="form-control" name="term" formControlName="term">
     </label>
-    <label class="col-2 col-form-label">Capacity:
+    <label class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-form-label">Capacity:
         <input type="number" min="12" max="400" class="form-control" name="capacity" formControlName="capacity">
     </label>
-    <label class="col-2 col-form-label">Ects:
+    <label class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-form-label">Ects:
         <input type="number" min="0" max="15" class="form-control" name="ects" formControlName="ects">
     </label>
-    <label class="col-2 col-form-label">Exam:
+    <label class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-form-label">Exam:
         <select class="form-control" name="exam" formControlName="exam">
             <option [ngValue]=true> yes </option>
             <option [ngValue]=false> no </option>
         </select>
     </label>
-
-    <button class="btn col-2" type="submit">Add course</button>
+    <div class="btn-container col-xs-6 col-sm-4 col-md-3 col-lg-2">
+        <button class="btn" type="submit">Add course</button>
+    </div>
 </form>

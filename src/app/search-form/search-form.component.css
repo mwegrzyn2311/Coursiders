@@ -11,7 +11,7 @@ label{
 }
 .not-full-row{
     display:inline-block;
-    width:94%;
+    width:auto;
 }
 .submit-div{
     display:inline-block;
